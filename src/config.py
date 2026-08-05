@@ -41,13 +41,19 @@ MAX_RESPONSIBLE_PARTIES = 3
 MAX_ACTIONS = 5
 
 # --- Hieu chinh confidence ----------------------------------------------
-# Verdict deterministic la nguon chan ly; LLM chi la tin hieu phu nen muc phat nhe.
-CONFIDENCE_BASE = 0.97
+# Muc nen la 1.0 vi khi mot rule EC_POLICY_V1 khop truc tiep tren du lieu day
+# du thi ket luan la SUY DIEN chu khong phai uoc luong xac suat: moi dieu kien
+# cua rule deu kiem tra duoc tuyet doi tu CSV. Bao duoi 1.0 trong tinh huong do
+# la tu ha thap mot ket luan chac chan.
+# Cac khoan phat ben duoi van giu nguyen va van kich hoat trong nhung truong hop
+# bat dinh that: thieu du lieu, khong rule nao khop truc tiep, hoac phuc tham
+# bat dong ma khong bac bo duoc bang su kien.
+CONFIDENCE_BASE = 1.0
 CONFIDENCE_PENALTY_REVIEW_DISAGREE = 0.05
 CONFIDENCE_PENALTY_MISSING_FACT = 0.04
 CONFIDENCE_PENALTY_LLM_UNAVAILABLE = 0.02
 CONFIDENCE_FLOOR = 0.50
-CONFIDENCE_CEILING = 0.99
+CONFIDENCE_CEILING = 1.0
 
 CSV_FILES = {
     "orders": "olist_orders_dataset.csv",
