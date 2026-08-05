@@ -6,7 +6,7 @@
   "runtime": {
     "python": "3.13.12",
     "platform": "Windows-11-10.0.26200-SP0",
-    "elapsed_seconds": 153.23,
+    "elapsed_seconds": 172.83,
     "cases_processed": 50
   },
   "decision_authority": "deterministic policy engine (EC_POLICY_V1); LLM chi dong vai tro dien giai va phuc tham doc lap, khong quyet dinh ket qua",

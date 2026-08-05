@@ -52,12 +52,15 @@ class AdjudicatorAgent:
         confidence = config.CONFIDENCE_BASE
         notes: list[str] = []
 
+        # Phuc tham vang mat hoac loi thi KHONG tru confidence: no khong lam du
+        # lieu kem day du hon, cung khong lam rule khop kem di. Neu tru o day
+        # thi mot loi API thoang qua se lam doi gia tri trong file nop, khien
+        # cung mot input cho ra hai ket qua khac nhau giua hai lan chay.
+        # Van ghi vao trace de con dau vet.
         if not review.get("available"):
-            confidence -= config.CONFIDENCE_PENALTY_LLM_UNAVAILABLE
             notes.append("phuc_tham_khong_kha_dung")
             agreement = "unavailable"
         elif review.get("primary_issue") is None:
-            confidence -= config.CONFIDENCE_PENALTY_LLM_UNAVAILABLE
             notes.append("phuc_tham_loi")
             agreement = "error"
         elif review["primary_issue"] == verdict.primary_issue:
