@@ -1,0 +1,20 @@
+.env
+*.env
+!.env.example
+
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# File nop va cac bien the A/B tren leaderboard - khong thuoc source code.
+# Bai nop la zip roi, sinh lai bang: python -m src.validate_submission --zip
+*.zip
+output_*/
+MAX*/
+
+# Cau hinh cong cu cuc bo
+.claude/
+.DS_Store
+.vscode/
+.idea/
